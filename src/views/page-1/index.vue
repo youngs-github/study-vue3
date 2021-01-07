@@ -72,7 +72,8 @@
     export default {
         name: 'Page1',
         components: { Card },
-        setup() {
+        inject: ['root'],
+        setup(props, ctx) {
             // 表单信息
             const form = reactive({
                 plateNo: '',
@@ -185,6 +186,9 @@
                 result,
                 vehicles
             };
+        },
+        created() {
+            //
         }
     };
 </script>
